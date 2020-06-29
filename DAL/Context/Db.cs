@@ -16,7 +16,7 @@ namespace DAL.Context
                 Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"),
                 false);
             var build = configurationBuilder.Build();
-            var sql = new MySqlConnection(build.GetSection("ConnectionString").GetSection("DefaultConnection").Value);
+            //var sql = new MySqlConnection(build.GetSection("ConnectionString").GetSection("DefaultConnection").Value);
             return sql;
         }
     }
