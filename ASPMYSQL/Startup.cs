@@ -17,12 +17,12 @@ namespace ASPMYSQL
     {
         public Startup(IConfiguration configuration)
         {
-            //inicia a construção da conexão com o banco de dados
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            //"incorpora" o json à propriedade Configuration
-            Configuration = builder.Build();
+            ////inicia a construção da conexão com o banco de dados
+            //var builder = new ConfigurationBuilder()
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            ////"incorpora" o json à propriedade Configuration
+            //Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -34,11 +34,11 @@ namespace ASPMYSQL
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             //services.AddMvc(option => option.EnableEndpointRouting = false);
 
-            //incorpora o DataContext ao projeto como um serviço (para ser chamado em outras classes)
-            services.Add(new ServiceDescriptor(
-                typeof(DataContext),
-                new DataContext(Configuration.GetConnectionString("DefaultConnection")))
-                );
+            ////incorpora o DataContext ao projeto como um serviço (para ser chamado em outras classes)
+            //services.Add(new ServiceDescriptor(
+            //    typeof(DataContext),
+            //    new DataContext(Configuration.GetConnectionString("DefaultConnection")))
+            //    );
 
         }
 
@@ -63,7 +63,7 @@ namespace ASPMYSQL
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=User}/{action=Index}/{id?}");
             });
         }
     }

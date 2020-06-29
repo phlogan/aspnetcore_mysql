@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bhvvvlRoU+WUJ7x1J9Tfm78iZAva3pDZ49WieVVWhFF5RBdbhwxTqjkWjjRHqvCO6ya8hAfQEXAHZN/boaX0eg==",
+  "dgSpecHash": "wpJgTwQbnrz3offTJ88jlHxKGLB926THIUc5D10y4LEg2zUepY7JPzkv2Gdi+dwW7Y5PfYzpY+RB55v3+bxxDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj",
-  "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
