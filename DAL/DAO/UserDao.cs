@@ -16,9 +16,9 @@ namespace DAL.DAO
             mySqlCon = Db.GetConnection();
             baseDao = new BaseDao();
         }
-        public ICollection<User> GetAll()
+        public IEnumerable<User> GetAll()
         {
-            ICollection<User> user = new List<User>();
+            List<User> user = new List<User>();
             using (MySqlConnection con = mySqlCon)
             {
                 con.Open();

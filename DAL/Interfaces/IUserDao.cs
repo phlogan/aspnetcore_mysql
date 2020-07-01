@@ -6,7 +6,7 @@ namespace DAL.Interfaces
 {
     public interface IUserDao
     {
-        ICollection<User> GetAll();
+        IEnumerable<User> GetAll();
         User GetById();
         User Add();
         User Update();

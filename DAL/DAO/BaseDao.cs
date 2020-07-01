@@ -12,8 +12,10 @@ namespace DAL.DAO
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT*FROM @table;";
-            cmd.Parameters.AddWithValue("@table", table);
+            cmd.CommandText = string.Format("{0} {1};", "SELECT*FROM", table);
+            //TODO
+            //verificar se é possível utilizar cmd.Parametrrs para adicionar o nome da tabela
+            //cmd.Parameters.AddWithValue("@table", table);
             return cmd.ExecuteReader();
         }
 

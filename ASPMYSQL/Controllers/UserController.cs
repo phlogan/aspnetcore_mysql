@@ -22,8 +22,8 @@ namespace ASPMYSQL.Controllers
         public ActionResult View()
         {
             //trocar getall por getbyid
-            ICollection<User> model = userDao.GetAll();
-            return View(model.LastOrDefault());
+            IEnumerable<User> model = userDao.GetAll();
+            return View(model.FirstOrDefault());
         }
     }
 }
