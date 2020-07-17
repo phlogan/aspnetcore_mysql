@@ -17,7 +17,7 @@ namespace DAL.Context
                 false);
             var build = configurationBuilder.Build();
             //var sql = new MySqlConnection(build.GetSection("ConnectionString").GetSection("DefaultConnection").Value);
-            var sql = new MySqlConnection("server=localhost;port=3306;database=crudcore;user=root;password=root");
+            var sql = new MySqlConnection("server=localhost;port=3308;database=crudcore;user=root;password=''");
 
             return sql;
         }

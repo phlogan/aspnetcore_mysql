@@ -400,3 +400,12 @@ C:\Users\Logan\source\repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\AS
 C:\Users\Logan\source\repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\ASPMYSQL.pdb
 C:\Users\Logan\source\repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\ASPMYSQL.genruntimeconfig.cache
 C:\Users\Logan\source\repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\User\View.cshtml.g.cs
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll

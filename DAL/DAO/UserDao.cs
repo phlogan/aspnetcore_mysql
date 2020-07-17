@@ -4,17 +4,16 @@ using DAL.Interfaces;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DAL.DAO
 {
     public class UserDao : IUserDao
     {
         private MySqlConnection mySqlCon;
-        private BaseDao baseDao;
         public UserDao()
         {
             mySqlCon = Db.GetConnection();
-            baseDao = new BaseDao();
         }
         public IEnumerable<User> GetAll()
         {
@@ -22,20 +21,18 @@ namespace DAL.DAO
             using (MySqlConnection con = mySqlCon)
             {
                 con.Open();
-                MySqlDataReader reader = baseDao.GetAll("user", con);
-                if(reader.HasRows)
-                {
+                MySqlDataReader reader = new MySqlCommand("SELECT*FROM user", con).ExecuteReader();
+                if (reader.HasRows)
                     while (reader.Read())
                     {
                         user.Add(new User
                         {
-                            Id = (Guid)reader.GetValue(0),
+                            Id = new Guid(reader.GetValue(0).ToString()),
                             Username = reader.GetValue(1).ToString(),
                             Email = reader.GetValue(2).ToString(),
                             Password = reader.GetValue(3).ToString()
                         });
                     }
-                }
                 return user;
             }
         }

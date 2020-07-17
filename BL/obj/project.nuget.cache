@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wpJgTwQbnrz3offTJ88jlHxKGLB926THIUc5D10y4LEg2zUepY7JPzkv2Gdi+dwW7Y5PfYzpY+RB55v3+bxxDg==",
+  "dgSpecHash": "LbMr3dD//GpMFAxuJ5giCjPRpVLO9Cyll19crzRqEiK0G/6U7I1npBppzAnuRiJsDa2MNCf/pov03KzMU6RIHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj",
+  "projectFilePath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

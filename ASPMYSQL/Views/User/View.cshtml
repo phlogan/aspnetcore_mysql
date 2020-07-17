@@ -1,4 +1,4 @@
-﻿@using BL.Models;
+﻿@using BL.Models
 @model User
 @{
     Layout = null;
@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>View</title>
     @Model.Id
+    @Model.Email
+    @Model.Password
+    @Model.Username
 
 </head>
 <body>
