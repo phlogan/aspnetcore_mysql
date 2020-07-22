@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BL.Models;
 using DAL.DAO;
-using BL.Models;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ASPMYSQL.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         UserDao userDao;
@@ -16,14 +16,13 @@ namespace ASPMYSQL.Controllers
         }
         public IActionResult Index()
         {
-            return null;   
+            return null;
         }
 
-        public ActionResult View()
+        public ActionResult View(Guid id)
         {
-            //trocar getall por getbyid
-            IEnumerable<User> model = userDao.GetAll();
-            return View(model.FirstOrDefault());
+            User model = userDao.GetById(id);
+            return View(model);
         }
     }
 }

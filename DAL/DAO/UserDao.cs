@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace DAL.DAO
 {
@@ -37,24 +38,59 @@ namespace DAL.DAO
             }
         }
 
-        public User GetById()
+        public User GetById(Guid id)
+        {
+            using (MySqlConnection con = mySqlCon)
+            {
+                con.Open();
+                MySqlDataReader reader = new MySqlCommand("SELECT*FROM user", con).ExecuteReader();
+                if (!reader.HasRows)
+                    return null;
+
+                reader.Read();
+                return new User
+                {
+                    Id = new Guid(reader.GetValue(0).ToString()),
+                    Username = reader.GetValue(1).ToString(),
+                    Email = reader.GetValue(2).ToString(),
+                    Password = reader.GetValue(3).ToString()
+                };
+            }
+        }
+
+        public User Add(User model)
+        {
+            using (MySqlConnection con = mySqlCon)
+            {
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO user VALUES (@id, @username, @email, @password");
+                    cmd.Parameters.AddWithValue("@id", model.Id);
+                    cmd.Parameters.AddWithValue("@username", model.Username);
+                    cmd.Parameters.AddWithValue("@email", model.Email);
+                    cmd.Parameters.AddWithValue("@password", model.Password);
+                    cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    con.Close();
+                    return model;
+                }
+                catch(MySqlException e)
+                {
+                    throw e.InnerException;
+                }
+            }
+        }
+
+        public User Update(User model)
         {
             throw new NotImplementedException();
         }
 
-        public User Add()
+        public User Remove(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public User Remove()
-        {
-            throw new NotImplementedException();
-        }
-
-        public User Update()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

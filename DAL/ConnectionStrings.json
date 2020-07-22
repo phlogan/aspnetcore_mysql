@@ -1,5 +1,0 @@
-{
-  "ConnectionString": {
-    "DataBase": "server=localhost;port=3306;database=crudcore;user=root;password=root"
-  }
-}
