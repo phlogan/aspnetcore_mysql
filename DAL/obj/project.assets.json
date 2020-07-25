@@ -1782,16 +1782,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
-      },
-      "BL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/BL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BL.dll": {}
-        }
       }
     }
   },
@@ -6102,16 +6092,10 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
-    },
-    "BL/1.0.0": {
-      "type": "project",
-      "path": "../BL/BL.csproj",
-      "msbuildProject": "../BL/BL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "BL >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 3.1.5",
       "Microsoft.Extensions.Configuration.Json >= 3.1.5",
       "MySql.Data >= 8.0.20"
@@ -6147,11 +6131,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

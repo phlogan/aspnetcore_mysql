@@ -1,6 +1,5 @@
-﻿using BL.Models;
+﻿using DAL.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace DAL.Interfaces
@@ -9,6 +8,7 @@ namespace DAL.Interfaces
     {
         IEnumerable<User> GetAll();
         User GetById(Guid id);
+        User GetByEmail(string email);
         User Add(User model);
         User Update(User model);
         User Remove(Guid id);

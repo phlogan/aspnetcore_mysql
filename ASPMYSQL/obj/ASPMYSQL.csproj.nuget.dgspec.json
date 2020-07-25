@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj"
+              "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj"
               }
             }
           }
@@ -111,7 +111,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -167,11 +171,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {
-                "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

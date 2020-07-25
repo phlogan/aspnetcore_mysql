@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v3.1": {
       "DAL/1.0.0": {
         "dependencies": {
-          "BL": "1.0.0",
           "Microsoft.Extensions.Configuration": "3.1.5",
           "Microsoft.Extensions.Configuration.Json": "3.1.5",
           "MySql.Data": "8.0.20"
@@ -1135,11 +1134,6 @@
             "fileVersion": "1.0.24212.1"
           }
         }
-      },
-      "BL/1.0.0": {
-        "runtime": {
-          "BL.dll": {}
-        }
       }
     }
   },
@@ -1911,11 +1905,6 @@
       "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
-    },
-    "BL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

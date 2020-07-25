@@ -1,5 +1,5 @@
-﻿using BL.Models;
-using DAL.DAO;
+﻿using BL.Services.User;
+using BL.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,11 +9,12 @@ namespace ASPMYSQL.Controllers
     [Authorize]
     public class UserController : Controller
     {
-        UserDao userDao;
+        UserService userService;
         public UserController()
         {
-            userDao = new UserDao();
+
         }
+
         public IActionResult Index()
         {
             return null;
@@ -21,7 +22,7 @@ namespace ASPMYSQL.Controllers
 
         public ActionResult View(Guid id)
         {
-            User model = userDao.GetById(id);
+            UserViewModel model = userService.GetById(id);
             return View(model);
         }
     }

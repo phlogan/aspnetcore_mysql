@@ -1,13 +1,16 @@
-﻿using BL.Enums;
+﻿using DAL.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BL.Models
+namespace DAL.Models
 {
-    public class User : BaseModel
+    public class User
     {
-        public User() : base()
-        { }
-
+        public User()
+        {
+            Id = new Guid();
+        }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "O nome de usuário deve ser inserido.")]
         [StringLength(50, ErrorMessage = "O nome de usuário precisa conter menos de 50 caracteres.")]
         [MinLength(5, ErrorMessage = "O nome de usuário precisa conter mais 5 caracteres.")]

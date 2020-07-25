@@ -23,11 +23,15 @@ namespace ASPMYSQL
                     options.Cookie.Name = "LoginCookie";
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
                 });
+            services.AddAuthorization(op => {
+                var defaultAuthBuilder = 
+                op.DefaultPolicy;
 
+             });
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRouting(options => options.LowercaseUrls = true);
-
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

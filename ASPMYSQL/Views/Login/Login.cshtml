@@ -1,9 +1,8 @@
-﻿@using BL.Models
-@model User
+﻿@using BL.ViewModels
+@model LoginViewModel
 @{ 
     ViewBag.Title = "Login";
 }
-
 <body>
     <div class="container">
         <div class="row">
@@ -25,13 +24,6 @@
                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "red-text" })
                             </div>
                             <button class="btn" type="submit" name="action">Submit</button>
-                            
-                            @*<div class="col s12">
-                                @if(ViewBag.Error != null)
-                                {
-                                    <h3 class="red-text">@ViewBag.Error</h3>
-                                }
-                            </div>*@
                         }
 
                     </div>

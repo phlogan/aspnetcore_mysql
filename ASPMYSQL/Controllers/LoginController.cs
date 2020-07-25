@@ -1,6 +1,6 @@
 ﻿using BL.Enums;
-using BL.Models;
-using DAL.DAO;
+using BL.Service.Login;
+using BL.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +13,10 @@ namespace ASPMYSQL.Controllers
 {
     public class LoginController : Controller
     {
-        UserDao userDao;
-        LoginDao loginDao;
+        LoginService loginService;
         public LoginController()
         {
-            userDao = new UserDao();
-            loginDao = new LoginDao();
+            loginService = new LoginService();
         }
         public IActionResult Index()
         {
@@ -31,35 +29,37 @@ namespace ASPMYSQL.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(User model)
+        public ActionResult Login(LoginViewModel model)
         {
             //TODO: problema com modelstate: usuario e id nao preenchidos estão dando problema. Talvez criar uma viewmodel?
+
             if (!ModelState.IsValid)
                 return View(model);
-            if (loginDao.Login(model))
+            //https://www.youtube.com/watch?v=Fhfvbl_KbWo
+
+            var user = loginService.Login(model);
+            if (user != null)
             {
                 //criando o cookie de login utilizando a biblioteca Authentication
-
                 //indica informações sobre o usuário que está logando
                 var claims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.Email, model.Email),
-                    new Claim(ClaimTypes.Name, model.Username),
-                    new Claim("UserType", Enum.GetName(typeof(UserType), model.UserType)),
+                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim("UserType", Enum.GetName(typeof(UserType), user.UserType))
                 };
-                
+
                 //cria uma identidade baseada nas informações acima
                 var userIdentity = new ClaimsIdentity(claims, "Auth");
-                
+
                 //criando autenticação de acordo com a identidade passada. Pode-se utilizar mais de um tipo de autenticação, como o Facebook
                 //coleção de identidades
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
 
-                var props = new AuthenticationProperties();
-                
-                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+                HttpContext.SignInAsync(principal, new AuthenticationProperties { ExpiresUtc = DateTime.UtcNow.AddMinutes(1) });
+                //HttpContext.SignInAsync(principal, new AuthenticationProperties { IsPersistent = true });
 
-                return RedirectToAction("View", "User", new { id = model.Id });
+                return RedirectToAction("View", "User", new { id = user.UserId});
             }
             else
             {
@@ -76,29 +76,5 @@ namespace ASPMYSQL.Controllers
             return RedirectToAction("Login");
         }
 
-        //[HttpPost]
-        //public ActionResult Login(User model)
-        //{
-        //    //TODO: criar viewmodels
-        //    //TODO: CRIAR COOKIES PARA LOGIN (https://medium.com/@lucas.eschechola/autentica%C3%A7%C3%A3o-via-identity-no-asp-net-core-2-2-2a4eb468a8a5)
-        //    if (!ModelState.IsValid)
-        //        return View(model);
-        //    if(loginDao.Login(model))
-        //    {
-        //        var claims = new List<Claim>()
-        //        {
-        //            new Claim(ClaimTypes.Email, model.Email),
-        //        };
-        //        var userIdentity = new ClaimsIdentity(claims, "login");
-        //        ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
-
-        //         HttpContext.SignInAsync(principal);
-        //        return RedirectToAction("Index", "Home");
-        //    }else
-        //    {
-        //        ModelState.AddModelError(string.Empty, "Usuário ou senha incorretos.");
-        //        return View(model);
-        //    }
-        //}
     }
 }

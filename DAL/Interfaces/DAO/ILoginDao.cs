@@ -1,13 +1,11 @@
-﻿using BL.Models;
-using System;
+﻿using DAL.Models;
 
 namespace DAL.Interfaces
 {
     public interface ILoginDao
     {
-        bool Login(User model);
+        User Login(User model);
         bool Logoff();
         bool IsLogged();
-
     }
 }
