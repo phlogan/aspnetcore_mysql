@@ -413,3 +413,4 @@ C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\AS
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\staticwebassets\ASPMYSQL.StaticWebAssets.Manifest.cache
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\staticwebassets\ASPMYSQL.StaticWebAssets.xml
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\ASPMYSQL.genruntimeconfig.cache
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs

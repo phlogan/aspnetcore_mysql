@@ -1,7 +1,7 @@
-﻿@*@using BL.Models
-@model User
+﻿@using BL.ViewModels
+@model UserViewModel
 @{
-    Layout = null;
+    ViewBag.Title = ViewBag.UserTypeClaim;
 }
 
 <!DOCTYPE html>
@@ -9,13 +9,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>View</title>
-    @Model.Id
+    <title>@ViewBag.UserTypeClaim</title>
+</head>
+
+<body>
+    @Model.UserId
     @Model.Email
     @Model.Password
     @Model.Username
-
-</head>
-<body>
 </body>
-</html>*@
+</html>

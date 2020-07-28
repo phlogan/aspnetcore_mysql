@@ -1,7 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<div style="width:100%; height:50px; background-color: red">
-    <p>Welcome</p>
-</div>
-@RenderBody();
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div style="width:100%; height:50px; background-color: red">
+        <p>Welcome</p>
+    </div>
+    @RenderBody();
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+@RenderSection("Scripts", required: false)

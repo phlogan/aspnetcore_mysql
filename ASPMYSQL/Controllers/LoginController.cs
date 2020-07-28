@@ -55,11 +55,13 @@ namespace ASPMYSQL.Controllers
                 //criando autenticação de acordo com a identidade passada. Pode-se utilizar mais de um tipo de autenticação, como o Facebook
                 //coleção de identidades
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
-
-                HttpContext.SignInAsync(principal, new AuthenticationProperties { ExpiresUtc = DateTime.UtcNow.AddMinutes(1) });
+                
+                //define se o usuário é administrador ou não (se está na role de administrador)
+                principal.IsInRole(user.UserType.ToString());
+                HttpContext.SignInAsync(principal, new AuthenticationProperties { ExpiresUtc = DateTime.UtcNow.AddMinutes(5) });
                 //HttpContext.SignInAsync(principal, new AuthenticationProperties { IsPersistent = true });
 
-                return RedirectToAction("View", "User", new { id = user.UserId});
+                return RedirectToAction("Profile", "User");
             }
             else
             {
