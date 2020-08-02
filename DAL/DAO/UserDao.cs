@@ -42,7 +42,9 @@ namespace DAL.DAO
             using (MySqlConnection con = mySqlCon)
             {
                 con.Open();
-                MySqlDataReader reader = new MySqlCommand("SELECT*FROM user", con).ExecuteReader();
+                MySqlCommand cmd = new MySqlCommand("SELECT*FROM user WHERE `id`=@id", con);
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
                 if (!reader.HasRows)
                     return null;
 

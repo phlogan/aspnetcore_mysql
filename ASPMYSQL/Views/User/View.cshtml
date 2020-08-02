@@ -13,9 +13,20 @@
 </head>
 
 <body>
-    @Model.UserId
-    @Model.Email
-    @Model.Password
-    @Model.Username
+    <div class="container">
+        <div class="row">
+            <h3 class="">Visualizar usuário - @Model.Username</h3>
+            <strong>Username: </strong>@Model.Username
+            <br />
+            <strong>Email: </strong>@Model.Email
+            <br />
+            <strong>UserType: </strong>@Model.UserType.ToString()
+            <br />
+            <div style="margin-top: 20px">
+                <a href="@Url.Action("Edit")" class="btn btn-small">Editar</a>
+                <a href="@Url.Action("Remove")" class="btn btn-small btn-remove">Remover</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

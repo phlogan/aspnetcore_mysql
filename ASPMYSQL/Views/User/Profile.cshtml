@@ -4,19 +4,20 @@
     ViewBag.Title = "Profile";
 }
 
+<div class="center row" style="background-color: #6b7db3">
+    <div class="col s4 offset-s4">
+        <div class="" style="width: 100px; height: 100px; background-color: black; margin: 0 auto; margin-top: 10px; border-radius: 100%">
+            PHOTO
+        </div>
+        <h4>@Model.Username</h4>
+        <h4>@Model.Email</h4>
+        <a href="@Url.Action("EditProfile, User")">Editar informações<i class="material-icons">mode_edit</i></a>
+    </div>
+</div>
+
 <div class="container">
-    <div class="center">
-        <div class="col s12">
-            <label>User ID: </label>@Model.UserId
-        </div>
-        <div class="col s12">
-            <label>Username: </label>@Model.Username
-        </div>
-        <div class="col s12">
-            <label>E-mail: </label>@Model.Email
-        </div>
-        <div class="col s12">
-            <label>Type: </label>@Model.UserType
-        </div>
+    <div class="row">
+        <h4>Listagem de usuários</h4>
+        <a href="@Url.Action("List", "User")">List</a>
     </div>
 </div>

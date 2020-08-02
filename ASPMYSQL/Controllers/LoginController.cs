@@ -25,7 +25,10 @@ namespace ASPMYSQL.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+                return View();
+            else 
+                return RedirectToAction("Profile", "User");
         }
 
         [HttpPost]
@@ -58,7 +61,7 @@ namespace ASPMYSQL.Controllers
                 
                 //define se o usuário é administrador ou não (se está na role de administrador)
                 principal.IsInRole(user.UserType.ToString());
-                HttpContext.SignInAsync(principal, new AuthenticationProperties { ExpiresUtc = DateTime.UtcNow.AddMinutes(5) });
+                HttpContext.SignInAsync(principal, new AuthenticationProperties { ExpiresUtc = DateTime.UtcNow.AddMinutes(10) });
                 //HttpContext.SignInAsync(principal, new AuthenticationProperties { IsPersistent = true });
 
                 return RedirectToAction("Profile", "User");
