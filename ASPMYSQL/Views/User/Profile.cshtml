@@ -1,0 +1,22 @@
+﻿@using BL.ViewModels
+@model UserViewModel
+@{
+    ViewBag.Title = "Profile";
+}
+
+<div class="container">
+    <div class="center">
+        <div class="col s12">
+            <label>User ID: </label>@Model.UserId
+        </div>
+        <div class="col s12">
+            <label>Username: </label>@Model.Username
+        </div>
+        <div class="col s12">
+            <label>E-mail: </label>@Model.Email
+        </div>
+        <div class="col s12">
+            <label>Type: </label>@Model.UserType
+        </div>
+    </div>
+</div>

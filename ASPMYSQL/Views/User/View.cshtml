@@ -1,0 +1,21 @@
+﻿@using BL.ViewModels
+@model UserViewModel
+@{
+    ViewBag.Title = ViewBag.UserTypeClaim;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.UserTypeClaim</title>
+</head>
+
+<body>
+    @Model.UserId
+    @Model.Email
+    @Model.Password
+    @Model.Username
+</body>
+</html>

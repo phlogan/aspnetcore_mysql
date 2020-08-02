@@ -1,0 +1,12 @@
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\bin\Debug\netcoreapp3.1\BL.deps.json
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\bin\Debug\netcoreapp3.1\BL.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\bin\Debug\netcoreapp3.1\BL.pdb
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.csprojAssemblyReference.cache
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.AssemblyInfoInputs.cache
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.AssemblyInfo.cs
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.csproj.CoreCompileInputs.cache
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.csproj.CopyComplete
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.dll
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\BL\obj\Debug\netcoreapp3.1\BL.pdb

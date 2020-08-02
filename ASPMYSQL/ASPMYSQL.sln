@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPMYSQL", "ASPMYSQL.csproj", "{5CE5BD88-B877-4293-A8C8-2A6E5E6E9E37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPMYSQL", "ASPMYSQL.csproj", "{5CE5BD88-B877-4293-A8C8-2A6E5E6E9E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "..\BL\BL.csproj", "{269B8106-F64D-4650-86BF-91E8B304D875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{067614A2-2CCA-448B-BF83-07727502ED45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5CE5BD88-B877-4293-A8C8-2A6E5E6E9E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE5BD88-B877-4293-A8C8-2A6E5E6E9E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CE5BD88-B877-4293-A8C8-2A6E5E6E9E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269B8106-F64D-4650-86BF-91E8B304D875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269B8106-F64D-4650-86BF-91E8B304D875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269B8106-F64D-4650-86BF-91E8B304D875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269B8106-F64D-4650-86BF-91E8B304D875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067614A2-2CCA-448B-BF83-07727502ED45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067614A2-2CCA-448B-BF83-07727502ED45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067614A2-2CCA-448B-BF83-07727502ED45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067614A2-2CCA-448B-BF83-07727502ED45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

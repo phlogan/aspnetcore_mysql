@@ -1,0 +1,35 @@
+﻿@using BL.ViewModels
+@model LoginViewModel
+@{ 
+    ViewBag.Title = "Login";
+}
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="center col s6">
+                <div class="container">
+                    <div class="row">
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+                            <div class="input-field col s12">
+                                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "validate" })
+                                <label for="Email">Email</label>
+                                @Html.ValidationMessageFor(m => m.Email, "", new {@class = "red-text" })
+                            </div>
+                            <div class="input-field col s12">
+                                @Html.PasswordFor(m => m.Password, new { @class = "validate" })
+                                <label for="Password">Senha</label>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "red-text" })
+                            </div>
+                            <button class="btn" type="submit" name="action">Submit</button>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
