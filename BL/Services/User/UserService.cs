@@ -17,6 +17,28 @@ namespace BL.Services.User
             userDao = new UserDao();
         }
 
+        public UserViewModel Add(UserViewModel model)
+        {
+            DAL.Models.User user = new DAL.Models.User
+            {
+                Username = model.Username,
+                Email = model.Email,
+                Password = model.Password,
+                UserType = (DAL.Enums.UserType)model.UserType
+            };
+            
+            userDao.Add(user);
+
+            model.UserId = user.Id;
+
+            return model;
+        }
+
+        public UserViewModel Edit(UserViewModel model)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<UserViewModel> GetAll()
         {
             var list = userDao.GetAll();

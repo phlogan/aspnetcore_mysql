@@ -10,5 +10,8 @@ namespace BL.Services.Interfaces
         IEnumerable<UserViewModel> GetAll();
         UserViewModel GetById(Guid id);
         UserViewModel GetByEmail(string email);
+        UserViewModel Add(UserViewModel model);
+        UserViewModel Edit(UserViewModel model);
+
     }
 }

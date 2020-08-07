@@ -415,3 +415,4 @@ C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\AS
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\User\List.cshtml.g.cs
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Footer.cshtml.g.cs
 C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
+C:\Users\Logan\Source\Repos\aspnetcore_mysql\ASPMYSQL\obj\Debug\netcoreapp3.1\Razor\Views\User\New.cshtml.g.cs

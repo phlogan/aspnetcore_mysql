@@ -81,7 +81,7 @@ namespace DAL.DAO
             }
         }
 
-        public User Add(User model)
+        public bool Add(User model)
         {
             using (MySqlConnection con = mySqlCon)
             {
@@ -97,7 +97,7 @@ namespace DAL.DAO
                     cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     con.Close();
-                    return model;
+                    return true;
                 }
                 catch (MySqlException e)
                 {
@@ -106,12 +106,12 @@ namespace DAL.DAO
             }
         }
 
-        public User Update(User model)
+        public bool Update(User model)
         {
             throw new NotImplementedException();
         }
 
-        public User Remove(Guid id)
+        public bool Remove(Guid id)
         {
             throw new NotImplementedException();
         }
