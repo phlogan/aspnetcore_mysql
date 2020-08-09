@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Net;
 using System.Security.AccessControl;
 using System.Security.Claims;
 
@@ -38,19 +39,23 @@ namespace ASPMYSQL.Controllers
             if (User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString())
                 throw new PrivilegeNotHeldException();
 
+            if (!ModelState.IsValid)
+                return View(model);
+
             model = userService.Add(model);
 
-            return View("View", model.UserId);
+            return RedirectToAction("View", new { id = model.UserId });
         }
         public ActionResult View(Guid id)
         {
             //Buscando o valor do cookie gerado no passo anterior
             //ViewBag.UserTypeClaim = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value;
-            
+
             UserViewModel model = userService.GetById(id);
-            if (User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString() &&
-                User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value != model.Email)
-                throw new PrivilegeNotHeldException();
+
+            if (((User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString())
+                && User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value != model.Email))
+                throw null;
 
             return View(model);
         }
@@ -61,6 +66,7 @@ namespace ASPMYSQL.Controllers
             UserViewModel model = userService.GetByEmail(User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
             return View(model);
         }
+
         public ActionResult List()
         {
             if (User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString())

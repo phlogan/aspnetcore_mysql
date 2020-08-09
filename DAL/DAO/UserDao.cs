@@ -88,8 +88,8 @@ namespace DAL.DAO
                 try
                 {
                     con.Open();
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO user VALUES (@id, @username, @email, @password, @userType)");
-                    cmd.Parameters.AddWithValue("@id", model.Id);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO user VALUES (@id, @username, @email, @password, @userType)", con);
+                    cmd.Parameters.AddWithValue("@id", model.Id.ToString().ToUpper());
                     cmd.Parameters.AddWithValue("@username", model.Username);
                     cmd.Parameters.AddWithValue("@email", model.Email);
                     cmd.Parameters.AddWithValue("@password", model.Password);

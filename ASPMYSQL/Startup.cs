@@ -21,6 +21,7 @@ namespace ASPMYSQL
                 {
                     options.LoginPath = "/Login/Login";
                     options.Cookie.Name = "LoginCookie";
+                    options.AccessDeniedPath = "/Error/AccessDenied";
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
                 });
             services.AddAuthorization(op => {
@@ -37,15 +38,19 @@ namespace ASPMYSQL
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error/Error");
+            //    app.UseHsts();
+            //}
+
+            //app.UseExceptionHandler("/Views/Error/Error");
+            //app.UseHsts();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

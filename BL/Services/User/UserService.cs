@@ -6,6 +6,7 @@ using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace BL.Services.User
 {
@@ -19,14 +20,16 @@ namespace BL.Services.User
 
         public UserViewModel Add(UserViewModel model)
         {
-            DAL.Models.User user = new DAL.Models.User
+            DAL.Models.User user = new DAL.Models.User();
+            user = new DAL.Models.User
             {
                 Username = model.Username,
                 Email = model.Email,
                 Password = model.Password,
                 UserType = (DAL.Enums.UserType)model.UserType
             };
-            
+
+            //TODO: criar validação para NÃO PERMITIR QUE E-MAIL E USERNAME SE REPITAM
             userDao.Add(user);
 
             model.UserId = user.Id;
@@ -72,13 +75,16 @@ namespace BL.Services.User
         public UserViewModel GetById(Guid id)
         {
             var model = userDao.GetById(id);
-            return new UserViewModel
-            {
-                UserId = model.Id,
-                Username = model.Username,
-                Email = model.Email,
-                UserType = (UserType)model.UserType
-            };
+            if(model != null)
+                return new UserViewModel
+                {
+                    UserId = model.Id,
+                    Username = model.Username,
+                    Email = model.Email,
+                    UserType = (UserType)model.UserType
+                };
+
+            return null;
         }
     }
 }
