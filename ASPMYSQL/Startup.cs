@@ -21,6 +21,7 @@ namespace ASPMYSQL
                 {
                     options.LoginPath = "/Login/Login";
                     options.Cookie.Name = "LoginCookie";
+                    options.AccessDeniedPath = "/Error/AccessDenied";
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
                 });
             services.AddAuthorization(op => {
@@ -43,9 +44,11 @@ namespace ASPMYSQL
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error/Error");
                 app.UseHsts();
             }
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

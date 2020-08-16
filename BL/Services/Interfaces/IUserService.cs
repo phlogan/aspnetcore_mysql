@@ -1,7 +1,7 @@
 ﻿using BL.ViewModels;
-using DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BL.Services.Interfaces
 {
@@ -10,5 +10,8 @@ namespace BL.Services.Interfaces
         IEnumerable<UserViewModel> GetAll();
         UserViewModel GetById(Guid id);
         UserViewModel GetByEmail(string email);
+        ValidationResult Add(UserViewModel model);
+        ValidationResult Edit(UserViewModel model);
+        ValidationResult Remove(Guid id);
     }
 }

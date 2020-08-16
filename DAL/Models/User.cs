@@ -8,7 +8,7 @@ namespace DAL.Models
     {
         public User()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
         [Required(ErrorMessage = "O nome de usuário deve ser inserido.")]

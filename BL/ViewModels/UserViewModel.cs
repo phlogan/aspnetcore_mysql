@@ -1,6 +1,7 @@
 ﻿using BL.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace BL.ViewModels
 {
@@ -22,6 +23,9 @@ namespace BL.ViewModels
         [StringLength(255, ErrorMessage = "A senha precisa conter menos de 255 caracteres.")]
         [MinLength(8, ErrorMessage = "A senha precisa conter mais que 8 caracteres.")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "O tipo de usuário deve ser preenchido.")]
+        [EnumDataType(typeof(UserType), ErrorMessage = "O tipo de usuário é inválido.")]
         public UserType UserType { get; set; }
     }
 }
