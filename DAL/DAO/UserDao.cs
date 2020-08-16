@@ -81,6 +81,28 @@ namespace DAL.DAO
             }
         }
 
+        public User GetByUsername(string username)
+        {
+            using (MySqlConnection con = mySqlCon)
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT*FROM user WHERE username = @username", con);
+                cmd.Parameters.AddWithValue("@username", username);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (!reader.HasRows)
+                    return null;
+
+                reader.Read();
+                return new User
+                {
+                    Id = new Guid(reader.GetValue(0).ToString()),
+                    Username = reader.GetValue(1).ToString(),
+                    Email = reader.GetValue(2).ToString(),
+                    UserType = (UserType)Convert.ToInt32(reader.GetValue(4))
+                };
+            }
+        }
+
         public bool Add(User model)
         {
             using (MySqlConnection con = mySqlCon)
@@ -99,21 +121,57 @@ namespace DAL.DAO
                     con.Close();
                     return true;
                 }
-                catch (MySqlException e)
+                catch
                 {
-                    throw e.InnerException;
+                    return false;
                 }
             }
         }
 
         public bool Update(User model)
         {
-            throw new NotImplementedException();
+            using (MySqlConnection con = mySqlCon)
+            {
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("UPDATE user SET username = @username, email = @email, password = @password, usertype = @userType WHERE id = @id", con);
+                    cmd.Parameters.AddWithValue("@id", model.Id.ToString().ToUpper());
+                    cmd.Parameters.AddWithValue("@username", model.Username);
+                    cmd.Parameters.AddWithValue("@email", model.Email);
+                    cmd.Parameters.AddWithValue("@password", model.Password);
+                    cmd.Parameters.AddWithValue("@userType", model.UserType);
+                    cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    con.Close();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
 
         public bool Remove(Guid id)
         {
-            throw new NotImplementedException();
+            using (MySqlConnection con = mySqlCon)
+            {
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("DELETE FROM user WHERE id = @id", con);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    con.Close();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
     }
 }

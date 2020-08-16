@@ -70,7 +70,7 @@ namespace ASPMYSQL.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            //apaga o cookie de login e redireciona
+            //apaga o cookie de login
             await HttpContext.SignOutAsync();
             return RedirectToAction("Login");
         }

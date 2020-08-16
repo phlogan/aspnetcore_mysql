@@ -1,0 +1,48 @@
+﻿<div id="panelMessageContainer" style="display: none">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel" id="card">
+                <strong><span class="" id="panelMessageText"></span></strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function showErrorMessage(message) {
+        showMessage("error", message);
+    }
+
+    function showSuccessMessage(message) {
+        showMessage("success", message);
+    }
+
+    function showMessage(type, message) {
+        var container = document.getElementById("panelMessageContainer");
+        var card = document.getElementById("card");
+        var messageText = document.getElementById("panelMessageText");
+        switch (type) {
+            case "error":
+                card.classList.add("red");
+                card.classList.add("lighten-3");
+                messageText.classList.add("red-text");
+                messageText.classList.add("text-darken-2");
+                messageText.innerHTML = message;
+                break;
+
+            case "success":
+                card.classList.add("green");
+                card.classList.add("accent-1");
+                messageText.classList.add("green-text");
+                messageText.classList.add("text-darken-4");
+                messageText.innerHTML = message;
+                break;
+        }
+        container.style.display = "block";
+
+        setTimeout(function () {
+            container.style.display = "none";    
+        }, 3000);
+    }
+</script>

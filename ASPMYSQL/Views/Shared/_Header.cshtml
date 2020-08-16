@@ -1,18 +1,26 @@
 ﻿@{
     Layout = null;
+    var user = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value;
 }
 <header>
     <nav style="background-color: #6b7db3;">
-    <div class="navbar-fixed">
-        <div class="nav-wrapper">
-            <a href="@Url.Action("Index", "Home")" class="brand-logo">
-                <i class="large material-icons" style="color: white">home</i>
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="@Url.Action("Login", "Login")">Login</a></li>
-                <li><a href="@Url.Action("Logout", "Login")">Logout</a></li>
-            </ul>
+        <div class="navbar-fixed">
+            <div class="nav-wrapper">
+                <a href="@Url.Action("Index", "Home")" class="brand-logo">
+                    <i class="large material-icons" style="color: white">home</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    @if (string.IsNullOrEmpty(user))
+                    {
+                        <li><a href="@Url.Action("Login", "Login")">Login</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("Profile", "User")">@user</a></li>
+                        <li><a href="@Url.Action("Logout", "Login")">Logout</a></li>
+                    }
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </header>

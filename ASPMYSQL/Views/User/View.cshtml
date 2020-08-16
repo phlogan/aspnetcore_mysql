@@ -23,8 +23,8 @@
             <strong>UserType: </strong>@Model.UserType.ToString()
             <br />
             <div style="margin-top: 20px">
-                <a href="@Url.Action("Edit")" class="btn btn-small">Editar</a>
-                <a href="@Url.Action("Remove")" class="btn btn-small btn-remove">Remover</a>
+                <a href="@Url.Action("Edit", new { id = Model.UserId })" class="btn btn-small">Editar</a>
+                <a href="@Url.Action("Remove", new { id = Model.UserId })" class="btn btn-small btn-remove">Remover</a>
             </div>
         </div>
     </div>

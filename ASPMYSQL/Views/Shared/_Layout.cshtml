@@ -8,6 +8,7 @@
 
 <body>
     @await Html.PartialAsync("~/Views/Shared/_Header.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_PanelMessage.cshtml")
     <main>
         @RenderBody();
     </main>
@@ -24,45 +25,52 @@
     h1, h2, h3, a, i {
         color: #6b7db3;
     }
+
     .btn {
         background-color: #6b7db3;
         border-color: #6b7db3;
     }
-    .btn:hover {
-        background-color: #4b647d;
-        border-color: #4b647d;
-    }
-    .btn > i
-    {
-        color: #e5f2ff;
-    }
-    .btn:active{ 
-        background-color: #4b647d!important;
-        border-color: #4b647d;
-    }
+
+        .btn:hover {
+            background-color: #4b647d;
+            border-color: #4b647d;
+        }
+
+        .btn > i {
+            color: #e5f2ff;
+        }
+
+        .btn:active {
+            background-color: #4b647d !important;
+            border-color: #4b647d;
+        }
+
     .btn-floating:active {
         background-color: #4b647d !important;
         border-color: #4b647d;
     }
+
     .btn-remove {
         background-color: #ff6347;
         border-color: #ff6347;
     }
+
     .validation-summary-errors {
         color: red;
         font-weight: bold;
     }
+
     body {
         display: flex;
         min-height: 100vh;
         flex-direction: column;
     }
+
     main {
         flex: 1 0 auto;
     }
-    
-    select
-    {
+
+    select {
         display: block;
     }
 </style>

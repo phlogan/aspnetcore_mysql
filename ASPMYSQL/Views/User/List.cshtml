@@ -6,6 +6,9 @@
 }
 
 <div class="container">
+    <div id="inner">
+
+    </div>
     <div class="row center">
         <div class="col m8 s12 offset-m2">
             <h4>Gerenciamento de usuários</h4>
@@ -27,9 +30,9 @@
                             <td>@user.Username</td>
                             <td>@user.UserType.ToString()</td>
                             <td class="center">
-                            <a href="@Url.Action("View", "User", new { id = user.UserId })" class="btn btn-floating btn-small" title="Visualizar" target="_blank"><i class="material-icons">portrait</i></a>
-                            <a href="@Url.Action("Edit", "User", new { id = user })" class="btn btn-floating btn-small" title="Editar" target="_blank"><i class="material-icons">mode_edit</i></a>
-                            <a href="@Url.Action("Remove", "User", new { id = user.UserId })" class="btn btn-floating btn-small btn-remove" title="Remover"><i class="material-icons">delete</i></a>
+                            <a href="@Url.Action("View", "User", new { id = user.UserId })" class="btn btn-floating btn-small" title="Visualizar"><i class="material-icons">portrait</i></a>
+                            <a href="@Url.Action("Edit", "User", new { id = user.UserId })" class="btn btn-floating btn-small" title="Editar"><i class="material-icons">mode_edit</i></a>
+                            <a onclick="remove('@user.UserId')" class="btn btn-floating btn-small btn-remove" title="Remover"><i class="material-icons">delete</i></a>
                         </td>
                         </tr>
                     }
@@ -40,3 +43,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                location.reload();
+                return false;
+            }
+            if (xhr.status == 404 || xhr.status == 400) {
+                showErrorMessage(xhr.responseText);
+            }
+        }
+    }
+
+    function remove(id) {
+        xhr.open("post", "@Url.Action("Remove", "User")" + "/" + id, false);
+        xhr.send();
+    }
+
+</script>
