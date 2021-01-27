@@ -4,7 +4,15 @@
 @{
     ViewBag.Title = "Listagem de usuários";
 }
-
+<nav class="main-breadcrumb">
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <a href="@Url.Action("Index", "Home")" class="breadcrumb">Home</a>
+            <a href="@Url.Action("Profile", "User")" class="breadcrumb">Perfil</a>
+            <a class="breadcrumb">@ViewBag.Title</a>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <div id="inner">
 

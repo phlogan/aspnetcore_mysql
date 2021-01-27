@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zCe0mArQPlQBc7fUjBRaIs48o4LFrNeyUMI4oUi5ujDOSLcn7FqHz80RPOGmEpF0937bhwoIuYbBjxqO5lxduA==",
+  "dgSpecHash": "GKDc8xflXc/OaIOkhSOlRKgQl6FadQtp8gIBT9JkNPPmhBit/fILmAftrR06so/LT+DFV5jqlLmx8H284sChnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
+  "projectFilePath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Logan\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Logan\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
@@ -173,12 +173,5 @@
     "C:\\Users\\Logan\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
     "C:\\Users\\Logan\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -8536,11 +8536,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
+      "projectUniqueName": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
       "projectName": "ASPMYSQL",
-      "projectPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
+      "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\ASPMYSQL\\ASPMYSQL.csproj",
       "packagesPath": "C:\\Users\\Logan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\obj\\",
+      "outputPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\ASPMYSQL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -8560,8 +8560,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj"
+            "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj"
             }
           }
         }
@@ -8613,13 +8613,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\ASPMYSQL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -1,26 +1,48 @@
 ﻿@{
     Layout = null;
     var user = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value;
+    bool showUserInfo = !string.IsNullOrEmpty(user);
 }
 <header>
-    <nav style="background-color: #6b7db3;">
+    @if(showUserInfo)
+    {
+        <ul id="dropdown" class="dropdown-content">
+            <li><a href="@Url.Action("Profile", "User")" class="black-text">Perfil</a></li>
+            <li><a href="@Url.Action("Logout", "Login")" class="red-text">Sair</a></li>
+        </ul>
+    }
+    <nav id="main-nav">
         <div class="navbar-fixed">
             <div class="nav-wrapper">
                 <a href="@Url.Action("Index", "Home")" class="brand-logo">
-                    <i class="large material-icons" style="color: white">home</i>
+                    <i class="material-icons" style="color: white; font-size: 3rem">home</i>
                 </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    @if (string.IsNullOrEmpty(user))
+                <ul class="right">
+                    @if (showUserInfo)
                     {
-                        <li><a href="@Url.Action("Login", "Login")">Login</a></li>
+                        <li><a class="dropdown-trigger" href="#" data-target="dropdown">@(user)<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                     }
                     else
                     {
-                        <li><a href="@Url.Action("Profile", "User")">@user</a></li>
-                        <li><a href="@Url.Action("Logout", "Login")">Logout</a></li>
+                        <li><a href="@Url.Action("Login", "Login")">Login</a></li>
                     }
+
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
+<style>
+    .nav-wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #main-nav {
+        background-color: #6b7db3;
+    }
+</style>
+<script>
+    $(".dropdown-trigger").dropdown();
+</script>

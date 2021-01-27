@@ -1,7 +1,7 @@
 ﻿@using BL.ViewModels
 @model UserViewModel
 @{
-    ViewBag.Title = ViewBag.UserTypeClaim;
+    ViewBag.Title = ViewBag.UserTypeClaim?? "Visualizar Usuário";
 }
 
 <!DOCTYPE html>
@@ -9,10 +9,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.UserTypeClaim</title>
+    <title>@ViewBag.Title</title>
 </head>
 
 <body>
+    <nav class="main-breadcrumb">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="@Url.Action("Index", "Home")" class="breadcrumb">Home</a>
+                <a href="@Url.Action("Profile", "User")" class="breadcrumb">Perfil</a>
+                @if (ViewBag.CanList)
+                {
+                    <a href="@Url.Action("List", "User")" class="breadcrumb">Listagem de Usuários</a>
+                }
+                <a class="breadcrumb">Visualizar Usuário</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <h3 class="">Visualizar usuário - @Model.Username</h3>
@@ -20,11 +33,13 @@
             <br />
             <strong>Email: </strong>@Model.Email
             <br />
-            <strong>UserType: </strong>@Model.UserType.ToString()
+            <strong>Tipo de usuário: </strong>@Model.UserType.ToString()
             <br />
             <div style="margin-top: 20px">
-                <a href="@Url.Action("Edit", new { id = Model.UserId })" class="btn btn-small">Editar</a>
-                <a href="@Url.Action("Remove", new { id = Model.UserId })" class="btn btn-small btn-remove">Remover</a>
+                @if (ViewBag.CanEdit)
+                {
+                    <a href="@Url.Action("Edit", new { id = Model.UserId })" class="btn btn-small">Editar</a>
+                }
             </div>
         </div>
     </div>

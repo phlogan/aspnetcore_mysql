@@ -7,6 +7,16 @@
 
 @using(Html.BeginForm())
 {
+    <nav class="main-breadcrumb">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="@Url.Action("Index", "Home")" class="breadcrumb">Home</a>
+                <a href="@Url.Action("Profile", "User")" class="breadcrumb">Perfil</a>
+                <a href="@Url.Action("List", "User")" class="breadcrumb">Listagem de Usuários</a>    
+                <a class="breadcrumb">@ViewBag.Title</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <h1 class="center">Novo usuário</h1>
@@ -14,7 +24,7 @@
             <div class="col s12">
                 <div class="input-field">
                     @Html.TextBoxFor(m => m.Username, "", new { @class = "validate" })
-                    <label for="Username">Username</label>
+                    <label for="Username">Nome de Usuário</label>
                     @Html.ValidationMessageFor(m => m.Username, "", new { @class = "red-text" })
                 </div>
             </div>
@@ -34,13 +44,13 @@
             <div class="col s12">
                 <div class="input-field">
                     @Html.PasswordFor(m => m.Password, new { @class = "validate" })
-                    <label for="Password">Password</label>
+                    <label for="Password">Senha</label>
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "red-text" })
                 </div>
             </div>
             <div class="col s12">
                 <button type="submit" class="btn">
-                    Submit
+                    Enviar
                     <i class="material-icons right">send</i>
                 </button>
             </div>

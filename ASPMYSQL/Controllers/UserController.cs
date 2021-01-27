@@ -2,15 +2,12 @@
 using BL.Services.User;
 using BL.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.AccessControl;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Newtonsoft.Json.Linq;
-using Microsoft.AspNetCore.Http;
-using System.Net.Http;
+using System.Security.AccessControl;
+using System.Security.Claims;
 
 namespace ASPMYSQL.Controllers
 {
@@ -79,36 +76,42 @@ namespace ASPMYSQL.Controllers
             return View(model);
         }
 
+        public ActionResult Remove()
+        {
+            return null;
+        }
         [HttpPost]
         public ActionResult Remove(Guid id)
         {
             if (User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString())
                 throw new PrivilegeNotHeldException();
-
             ValidationResult validation = userService.Remove(id);
-            if(validation == ValidationResult.Success)
+            if (validation == ValidationResult.Success)
                 return RedirectToAction("List");
-
 
             return new BadRequestObjectResult(validation.ErrorMessage);
         }
 
         public ActionResult View(Guid id)
         {
-            //Buscando o valor do cookie gerado no passo anterior
-            //ViewBag.UserTypeClaim = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value;
-
             UserViewModel model = userService.GetById(id);
 
-            if (((User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString())
-                && User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value != model.Email))
-                throw null;
+            if (User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value != UserType.Admin.ToString()
+                && User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value != model.Email)
+                throw new PrivilegeNotHeldException();
+
+            ViewBag.CanEdit = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value == UserType.Admin.ToString();
+            ViewBag.CanRemove = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value == UserType.Admin.ToString();
+            ViewBag.CanList = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value == UserType.Admin.ToString();
 
             return View(model);
         }
 
         public ActionResult Profile()
         {
+            ViewBag.CanListUsers = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value == UserType.Admin.ToString();
+            ViewBag.CanAddUsers = User.Claims?.FirstOrDefault(c => c.Type == "UserType")?.Value == UserType.Admin.ToString();
+
             //pega o valor Email do cookie para pesquisar o usuário
             UserViewModel model = userService.GetByEmail(User.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
             return View(model);

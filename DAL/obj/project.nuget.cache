@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ISp2lSeZLKGqWtvN+c1ILDR5HLT+lSQwZouApN3Xii5ckRQOtHYBvAFH3kRMJqTSnv9cPspbavjf04nxUAdvQ==",
+  "dgSpecHash": "v5JjRr6FmLPStjAzopmXvyiNJ60oBgK6U+0g8uNJVQ6sxcJlKtnejOvQvlJdAG1GS3qzmJzrLQLKz9/rJsQg8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Logan\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Logan\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",

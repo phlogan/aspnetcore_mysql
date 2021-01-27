@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj": {}
+    "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj": {
+    "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj",
+        "projectUniqueName": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\BL.csproj",
+        "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\BL.csproj",
         "packagesPath": "C:\\Users\\Logan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\BL\\obj\\",
+        "outputPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj"
+              "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj"
               }
             }
           }
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
+    "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Logan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logan\\source\\repos\\aspnetcore_mysql\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\Logan\\Source\\Repos\\aspnetcore_mysql\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

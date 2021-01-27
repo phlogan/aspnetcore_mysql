@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
+﻿using System.ComponentModel.DataAnnotations;
 namespace BL.ViewModels
 {
     public class LoginViewModel
@@ -13,7 +9,7 @@ namespace BL.ViewModels
         public string Email { get; set; }
 
         [Required(ErrorMessage = "A senha deve ser inserida.")]
-        [StringLength(255, ErrorMessage = "A senha precisa conter menos de 255 caracteres.")]
+        [StringLength(20, ErrorMessage = "A senha precisa conter menos de 20 caracteres.")]
         [MinLength(8, ErrorMessage = "A senha precisa conter mais que 8 caracteres.")]
         public string Password { get; set; }
     }
